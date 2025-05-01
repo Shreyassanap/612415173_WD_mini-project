@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vault 9 Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    :root {
+      --img1-rotate: -35deg;
+      --img2-rotate: -25deg;
+      --img3-rotate: -15deg;
+      --img4-rotate: 0deg;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: black;
+    }
+
+    #main {
+      height: 10vh;
+      min-height: 60px;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    #nav1 {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    #nav1 h2 {
+      border: 1px solid black;
+      border-radius: 100px;
+      font-size: 15px;
+      padding: 10px;
+    }
+    #nav1 i {
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 50px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    #search-bar {
+      max-width: 0;
+      overflow: hidden;
+      transition: max-width 0.4s ease;
+    }
+    #search-bar input {
+      padding: 5px 10px;
+      font-size: 14px;
+      border: 1px solid black;
+      border-radius: 20px;
+      outline: none;
+      width: 200px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    #search-bar.show {
+      max-width: 220px;
+    }
+    #search-bar.show input {
+      opacity: 1;
+    }
+    #nav2 {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    #nav2 i {
+      font-size: 35px;
+    }
+    #nav3 {
+      display: flex;
+      gap: 7px;
+    }
+    #nav3 h3 {
+      border: 1px solid black;
+      border-radius: 100px;
+      padding: 10px;
+    }
+    #signin h3 {
+      background-color: rgb(219, 74, 22);
+    }
+
+    .hero {
+      position: relative;
+      height: 600px; 
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+   
+    #main2 {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    #main2 h1 {
+      font-size: 8vw;
+    }
+  
+    #image-container {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 100%;
+      height: auto;
+    }
+    #image-container img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 450px;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 50px;
+      transition: opacity 1s ease, filter 1s ease, transform 1s ease;
+    }
+    
+    .blur-transition {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    
+    #img1 { transform: translate(-50%, -50%) rotate(var(--img1-rotate)); }
+    #img2 { transform: translate(-50%, -50%) rotate(var(--img2-rotate)); }
+    #img3 { transform: translate(-50%, -50%) rotate(var(--img3-rotate)); }
+    #img4 { transform: translate(-50%, -50%) rotate(var(--img4-rotate)); }
+
+    #mobile-carousel {
+      display: none;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    #mobile-carousel .carousel-slide {
+      width: 100%;
+      display: none;
+    }
+    #mobile-carousel .carousel-slide.active {
+      display: block;
+    }
+    #mobile-carousel img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    
+    #main3 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    #end1 p {
+      color: rgb(219, 74, 22);
+    }
+    #end2 i {
+      font-size: 50px;
+    }
+    #logos {
+      display: flex;
+      gap: 10px;
+    }
+    #logos i {
+      font-size: 30px;
+    }
+    #instagram {
+      color: rgb(237, 131, 149);
+    }
+    #youtube {
+      color: red;
+    }
+    #whatsapp {
+      color: rgb(12, 182, 12);
+    }
+
+    @media (max-width: 768px) {
+
+      #image-container {
+        display: none;
+      }
+      .hero {
+        height: auto;
+        padding: 40px 0;
+      }
+      
+      #mobile-carousel {
+        display: block;
+      }
+     
+      :root {
+        --img1-rotate: -15deg;
+        --img2-rotate: -10deg;
+        --img3-rotate: -5deg;
+        --img4-rotate: 0deg;
+      }
+  
+      #nav2 h1 { font-size: 24px; }
+      #main2 h1 { font-size: 12vw; }
+      #nav1 h2, #nav3 h3 { padding: 5px; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      #main2 h1 { font-size: 16vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="main">
+    <div id="nav1">
+      <a href="mini_project_part1.html"><h2>menu</h2></a>
+      <i class="ri-menu-search-line" id="search-icon"></i>
+      <div id="search-bar">
+        <input type="text" placeholder="Search Vault 9 Fashion..." />
+      </div>
+    </div>
+    <div id="nav2">
+      <i class="ri-play-circle-fill"></i>
+      <h1>VAULT 9 FASHION</h1>
+    </div>
+    <div id="nav3">
+      <div id="login">
+        <a href="login1.html"><h3>log in</h3></a>
+      </div>
+      <div id="signin">
+        <a href="WD2.html"><h3>sign in</h3></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div id="main2">
+      <h1>OUR ADVANTAGES</h1>
+    </div>
+    <div id="image-container">
+      <img id="img1" src="https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?q=80&w=2127&auto=format&fit=crop" alt="model1">
+      <img id="img2" src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?q=80&w=1974&auto=format&fit=crop" alt="model2">
+      <img id="img3" src="https://images.unsplash.com/photo-1618001789159-ffffe6f96ef2?q=80&w=1974&auto=format&fit=crop" alt="model3">
+      <img id="img4" src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?q=80&w=1974&auto=format&fit=crop" alt="model4">
+    </div>
+  </div>
+
+  <div id="mobile-carousel">
+    <div class="carousel-slide active">
+      <img src="https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?q=80&w=2127&auto=format&fit=crop" alt="model1">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?q=80&w=1974&auto=format&fit=crop" alt="model2">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.unsplash.com/photo-1618001789159-ffffe6f96ef2?q=80&w=1974&auto=format&fit=crop" alt="model3">
+    </div>
+    <div class="carousel-slide">
+      <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?q=80&w=1974&auto=format&fit=crop" alt="model4">
+    </div>
+  </div>
+
+  <div id="main3">
+    <div id="end1">
+      <p>*</p>
+      <h3>Your smile, Our Passion</h3>
+    </div>
+    <div id="end2">
+      <a href="mini_project_part2.html"><i class="ri-arrow-down-circle-fill"></i></a>
+    </div>
+    <div id="end3">
+      <div id="logos">
+        <a href="https://www.instagram.com/accounts/login/" target="_blank" id="instagram">
+          <i class="ri-instagram-line"></i>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" id="youtube">
+          <i class="ri-youtube-line"></i>
+        </a>
+        <a href="https://wa.me" target="_blank" id="whatsapp">
+          <i class="ri-messenger-line"></i>
+        </a>
+      </div>
+      <div id="best">
+        <h3>Best Start Up of 2025</h3>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const searchIcon = document.getElementById('search-icon');
+    const searchBar = document.getElementById('search-bar');
+    searchIcon.addEventListener('click', () => {
+      searchBar.classList.toggle('show');
+      if (searchBar.classList.contains('show')) {
+        setTimeout(() => searchBar.querySelector('input').focus(), 300);
+      }
+    });
+
+    const images = [
+      "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?q=80&w=2127&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1492288991661-058aa541ff43?q=80&w=1974&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618001789159-ffffe6f96ef2?q=80&w=1974&auto=format&fit=crop"
+    ];
+    const imgElements = [
+      document.getElementById("img1"),
+      document.getElementById("img2"),
+      document.getElementById("img3"),
+      document.getElementById("img4")
+    ];
+    function fadeBlurSwapImages() {
+      imgElements.forEach(img => {
+        img.classList.add('blur-transition');
+      });
+      setTimeout(() => {
+        const lastSrc = images.pop();
+        images.unshift(lastSrc);
+        imgElements.forEach((img, index) => {
+          img.src = images[index % images.length];
+          img.classList.remove('blur-transition');
+        });
+      }, 1000);
+    }
+    setInterval(fadeBlurSwapImages, 5000);
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('#mobile-carousel .carousel-slide');
+    function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    setInterval(showNextSlide, 5000);
+  </script>
+</body>
+</html>

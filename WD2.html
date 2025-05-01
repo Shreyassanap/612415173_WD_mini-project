@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Consumer Registration</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    #form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    p {
+      margin: 5px 0;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    .inline-inputs {
+      display: flex;
+      gap: 15px;
+    }
+
+    .inline-inputs input {
+      flex: 1;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      font-weight: 500;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 8px;
+      transform: scale(1.2);
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2c80b4;
+      transform: translateY(-2px);
+    }
+
+    input[type="submit"]:active {
+      background-color: #22689d;
+      transform: translateY(1px);
+    }
+  </style>
+</head>
+<body>
+  <div id="form">
+    <h1>NEW CONSUMER REGISTRATION FORM</h1>
+    <form>
+      <p>Enter Name</p>
+      <div class="inline-inputs">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+      </div>
+
+      <p>User Name</p>
+      <input type="text" placeholder="User Name" required>
+
+      <p>Confirm User Name</p>
+      <input type="text" placeholder="Confirm User Name" required>
+
+      <p>Date Of Birth</p>
+      <input type="date" required>
+
+      <p>Age</p>
+      <input type="number" placeholder="Age" required>
+
+      <p>Gender</p>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" required> Male</label>
+        <label><input type="radio" name="gender"> Female</label>
+        <label><input type="radio" name="gender"> Others</label>
+      </div>
+
+      <p>MOST PREFERRED</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="sub"> SHIRTS</label>
+        <label><input type="checkbox" name="sub"> TROUSERS</label>
+        <label><input type="checkbox" name="sub"> JACKETS</label>
+      </div>
+
+      <p>How Often Do You Shop For Clothes?</p>
+      <input type="text" placeholder="e.g., Weekly, Monthly, Occasionally" required>
+
+      <p>Most Preferred Clothing Type</p>
+      <input type="text" placeholder="e.g., Casual, Formal, Sportswear" required>
+
+      <p>Price Range</p>
+      <input type="number" placeholder="Price Range" required>
+
+      <p>Address</p>
+      <p>State</p>
+      <input type="text" placeholder="State" required>
+
+      <p>City</p>
+      <input type="text" placeholder="City" required>
+
+      <p>Locality</p>
+      <input type="text" placeholder="Locality" required>
+
+      <p>Pin Code</p>
+      <input type="text" placeholder="PIN" required>
+
+      <p>Email Address</p>
+      <input type="email" placeholder="Email Address" required>
+
+      <p>Phone Number</p>
+      <input type="number" placeholder="Phone Number" required>
+
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</body>
+</html>

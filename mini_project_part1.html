@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vault 9 Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 10px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links, .auth-links {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+    }
+
+    .nav-links a, .auth-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover, .auth-links a:hover {
+      color: orange;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    #home {
+      text-align: center;
+    }
+
+    #home h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    #shop h2, #about h2, #contact h2 {
+      margin-bottom: 20px;
+    }
+
+    .product-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-item {
+      text-align: center;
+    }
+
+    .product-item img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #222;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Vault 9 Fashion</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="auth-links">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1>Welcome to Vault 9 Fashion</h1>
+      <p>Your style, your identity.</p>
+    </section>
+
+    <section id="shop">
+      <h2>Shop Our Collection</h2>
+      <div class="product-gallery">
+        <div class="product-item">
+          <img src="https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?q=80" alt="Product 1">
+          <p>Classic Denim</p>
+        </div>
+        <div class="product-item">
+          <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?q=80" alt="Product 2">
+          <p>Urban Style</p>
+        </div>
+        <div class="product-item">
+          <img src="https://images.unsplash.com/photo-1618001789159-ffffe6f96ef2?q=80" alt="Product 3">
+          <p>Modern Elegance</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Vault 9 Fashion brings you the latest trends and timeless designs, fusing comfort and creativity into every piece. We're driven by your smile and your story.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: contact@vault9fashion.com</p>
+      <p>Instagram: @vault9fashion</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Vault 9 Fashion. All rights reserved.
+  </footer>
+
+</body>
+</html>

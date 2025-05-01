@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vault9 Portal</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 350px;
+      background: white;
+      border: 1px solid #dbdbdb;
+      padding: 40px;
+      text-align: center;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 30px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #dbdbdb;
+      background: #fafafa;
+      border-radius: 3px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0095f6;
+      color: white;
+      border: none;
+      font-weight: bold;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .divider {
+      margin: 20px 0;
+      position: relative;
+      text-align: center;
+    }
+    .divider span {
+      background: white;
+      padding: 0 10px;
+      color: #999;
+      position: relative;
+      z-index: 1;
+    }
+    .divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #dbdbdb;
+      z-index: 0;
+    }
+    .link {
+      color: #00376b;
+      font-size: 12px;
+      text-decoration: none;
+      display: block;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .vault9-login {
+      color: #222;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: green;
+    }
+    h3 { margin-bottom: 10px; }
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://marketplace.canva.com/EAGTpHJevAg/1/0/1600w/canva-brown-minimalistic-abstract-fashion-brand-logo-ABoOPrHi6D8.jpg" alt="Vault 9 Fashion" class="logo" />
+
+    <!-- Login Form -->
+    <div id="login-section">
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Phone number, username, or email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+        <div class="divider"><span>OR</span></div>
+        <a href="#" class="vault9-login">Log in with Vault9 App</a>
+        <span class="link" onclick="toggleForms()">Forgot password?</span>
+      </form>
+      <div id="result"></div>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div id="forgot-section" class="hidden">
+      <h3>Reset Your Password</h3>
+      <p>Enter your email address and we'll send you a reset link.</p>
+      <input type="email" id="resetEmail" placeholder="Enter your email" required />
+      <button onclick="sendReset()">Send Reset Link</button>
+      <span class="link" onclick="toggleForms()">Back to Login</span>
+      <div id="reset-result"></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForms() {
+      const login = document.getElementById("login-section");
+      const forgot = document.getElementById("forgot-section");
+      login.classList.toggle("hidden");
+      forgot.classList.toggle("hidden");
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      document.getElementById('result').innerHTML =
+        "<strong>Login Details:</strong><br>" +
+        "Username: " + username + "<br>" +
+        "Password: " + password;
+    });
+
+    function sendReset() {
+      var email = document.getElementById('resetEmail').value;
+      document.getElementById('reset-result').innerHTML =
+        "A reset link has been sent to <strong>" + email + "</strong>";
+    }
+  </script>
+</body>
+</html>
