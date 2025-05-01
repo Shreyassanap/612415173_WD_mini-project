@@ -9,9 +9,9 @@ To view the project:
 1. **Download or Clone the Repository:**  
    Ensure you have the full project files, including the HTML, CSS, and JavaScript.
 
-2. **Open the `index.html` File:**  
-   Simply double-click the `index.html` file (or the main HTML file in your project) and open it in your preferred web browser.  
-   Alternatively, you can use a local server setup (e.g., using the Live Server extension in VS Code or running `python -m http.server` from the command line) for the best experience.
+2. **Open the `mini_projct` File:**  
+   Simply double-click the `mini_projct` file (or the main HTML file in your project) and open it in your preferred web browser.  
+   Alternatively, you can use a local server setup (e.g., using the Live Server extension in VS Code from the command line) for the best experience.
 
 3. **Resize for Responsive Testing:**  
    The site is designed with responsive behavior. Resize your browser window or open the page on different devices to see the adjustments (e.g., the overlapping image effects on desktop versus the mobile carousel).
@@ -43,7 +43,7 @@ To view the project:
    Use any modern code editor (e.g., Visual Studio Code) to modify the HTML, CSS, or JavaScript as needed.
 
 3. **Preview Changes:**  
-   Open the `index.html` file in your browser or use a local development server to preview your changes in real time.
+   Open the `mini_projct` file in your browser or use a local development server to preview your changes in real time.
 
 ## Acknowledgments
 
